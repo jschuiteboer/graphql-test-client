@@ -18,7 +18,6 @@ class BookFilter extends Component {
 
     state = {
         books: [],
-        filter: {},
     };
 
     render() {
@@ -26,10 +25,10 @@ class BookFilter extends Component {
             <div>
                 <div className="form-group">
                     <div className="input-group mb-3">
-                        <input type="text" className="form-control" placeholder="title" onChange={e => this.setState({filter: {title: e.target.value}})}/>
+                        <input type="text" className="form-control" placeholder="title" onChange={e => this.setState({title: e.target.value})}/>
                     </div>
                     <div className="input-group mb-3">
-                        <input type="text" className="form-control" placeholder="author" onChange={e => this.setState({filter: {authorName: e.target.value}})}/>
+                        <input type="text" className="form-control" placeholder="author" onChange={e => this.setState({authorName: e.target.value})}/>
                     </div>
                     <button className="btn btn-secondary" onClick={() => this._executeSearch()}>Search</button>
                 </div>
@@ -44,11 +43,23 @@ class BookFilter extends Component {
     }
 
     _executeSearch = async () => {
-        console.log(this.state);
+        console.log("state: ", this.state);
+
+        let filter = {};
+
+        if(this.state.title) {
+            filter.title = this.state.title;
+        }
+
+        if(this.state.authorName) {
+            filter.authorName = this.state.authorName;
+        }
 
         const result = await this.props.client.query({
             query: QUERY,
-            variables: { filter: this.state.filter },
+            variables: {
+                filter: filter,
+            },
         });
 
         console.log("result:", result);
