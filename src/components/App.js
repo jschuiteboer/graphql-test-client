@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import BookList from "./BookList";
+import BookFilter from "./BookFilter";
 
 class App extends Component {
   render() {
     return (
         <div>
             <nav className="navbar navbar-dark bg-dark mb-5">
-                <a className="navbar-brand" href="#">GraphQL Client</a>
+                <span className="navbar-brand">GraphQL Client</span>
             </nav>
-            <div class="container">
-                <BookList />
+            <div className="container">
+                <BookFilter />
             </div>
         </div>
     );
