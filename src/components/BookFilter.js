@@ -6,7 +6,7 @@ import Query from "react-apollo/Query";
 
 const QUERY = gql`
     query filterBooks($filter: BookFilterInput!) {
-        filterBooks(filter: $filter) {
+        books(filter: $filter) {
             id
             title
             series
@@ -87,9 +87,7 @@ class BookFilter extends Component {
                                 return <div>{ error.message }</div>
                             }
 
-                            const books = data.filterBooks;
-
-                            return (<BookList books={books} />)
+                            return (<BookList books={ data.books } />)
                         }}
                     </Query>
                 </div>
