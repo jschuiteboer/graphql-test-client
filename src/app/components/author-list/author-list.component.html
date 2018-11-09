@@ -1,0 +1,7 @@
+<ul *ngIf="authors$ | async as authors" class="list-group">
+  <li *ngFor="let author of authors" class="list-group-item">
+
+    {{author.name}}
+
+  </li>
+</ul>
