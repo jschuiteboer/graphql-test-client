@@ -3,14 +3,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { BookListComponent } from './book-list/book-list.component';
-import { GraphQLModule } from './graphql.module';
+import { AppRoutingModule } from './modules/app-routing.module';
+import { BookListComponent } from './components';
+import { GraphQLModule } from './modules/graphql.module';
+import { AuthorListComponent } from './components/author-list/author-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
+    AuthorListComponent,
   ],
   imports: [
     BrowserModule,

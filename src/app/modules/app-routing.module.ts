@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { BookListComponent } from "./book-list/book-list.component";
+import { AuthorListComponent, BookListComponent } from "../components";
 
 const routes: Routes = [
   { path: 'book-list', component: BookListComponent },
+  { path: 'author-list', component: AuthorListComponent },
   { path: '', redirectTo: '/book-list', pathMatch: 'full' },
   //{ path: '**', component: PageNotFoundComponent },
 ];

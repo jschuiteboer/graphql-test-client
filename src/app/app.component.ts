@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'GraphQL Client';
+
+  menu = [
+    { text: 'Books', routerLink: '/book-list', },
+    { text: 'Authors', routerLink: '/author-list', }
+  ]
 }
