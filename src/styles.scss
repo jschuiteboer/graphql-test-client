@@ -1,5 +1,6 @@
-/*
-set bootstrap variables here
-*/
+/* set bootstrap variables here */
 
-@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap/scss/bootstrap';
+
+$icon-font-path: '~open-iconic/font/fonts/';
+@import '~open-iconic/font/css/open-iconic-bootstrap';
