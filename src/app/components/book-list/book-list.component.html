@@ -1,7 +1,8 @@
 <app-filter-books (filtered)="onFiltered($event)"></app-filter-books>
 
 <div *ngIf="books$ | async as books">
-  <ul *ngIf="books.length; else noResults" class="list-group">
+
+  <ul class="list-group">
     <li *ngFor="let book of books" class="list-group-item">
 
       <div class="d-flex justify-content-between">
@@ -12,10 +13,6 @@
 
     </li>
   </ul>
+  
+  <span>{{books.length}} result{{books.length == 1?'':'s'}}</span>
 </div>
-
-<ng-template #noResults>
-  <div class="alert alert-primary" role="alert">
-    No results
-  </div>
-</ng-template>
