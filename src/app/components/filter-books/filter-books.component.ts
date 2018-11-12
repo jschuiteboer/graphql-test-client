@@ -12,9 +12,15 @@ export class FilterBooksComponent {
 
   private model:BookFilter = {};
 
+  private showFilters: boolean;
+
   constructor() { }
 
   onSubmit() {
     this.filtered.emit(this.model);
+  }
+
+  toggleFilters() {
+    this.showFilters = !this.showFilters;
   }
 }

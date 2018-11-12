@@ -2,7 +2,7 @@
 
 <div *ngIf="books$ | async as books">
 
-  <ul class="list-group">
+  <ul *ngIf="books.length" class="list-group mb-3">
     <li *ngFor="let book of books" class="list-group-item">
 
       <div class="d-flex justify-content-between">

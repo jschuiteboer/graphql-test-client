@@ -19,7 +19,7 @@ export class BookListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.books$ = this.bookService.getBooks({});
+    this.onFiltered(undefined);
   }
 
   onFiltered(filter:BookFilter) {
