@@ -6,7 +6,13 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './modules/app-routing.module';
 import { GraphQLModule } from './modules/graphql.module';
-import { AuthorDetailComponent, AuthorListComponent, BookListComponent, FilterBooksComponent } from './components';
+import {
+  AuthorDetailComponent,
+  AuthorListComponent,
+  BookListComponent,
+  FilterBooksComponent,
+  PageNotFoundComponent
+} from './components';
 
 @NgModule({
   declarations: [
@@ -15,6 +21,7 @@ import { AuthorDetailComponent, AuthorListComponent, BookListComponent, FilterBo
     AuthorListComponent,
     FilterBooksComponent,
     AuthorDetailComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
