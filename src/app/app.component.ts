@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'GraphQL Client';
 
   menu = [
-    { text: 'Books', routerLink: '/book-list', },
-    { text: 'Authors', routerLink: '/author-list', }
+    { text: 'Books', routerLink: '/books', },
+    { text: 'Authors', routerLink: '/authors', }
   ]
 }
