@@ -7,7 +7,7 @@
 
       <div class="d-flex justify-content-between">
         <h5 class="mb-1">{{book.title}}</h5>
-        <span>{{book.author.name}}</span>
+        <a [routerLink]="['/author', book.author.id]">{{book.author.name}}</a>
       </div>
       <span>{{book.series}}</span>
 

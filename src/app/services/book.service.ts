@@ -15,6 +15,7 @@ const FILTER_BOOKS_QUERY = gql`query filterBooks($filter: BookFilterInput) {
     title
     series
     author {
+      id
       name
     }
   }
