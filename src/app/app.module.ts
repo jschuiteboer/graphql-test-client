@@ -6,7 +6,7 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './modules/app-routing.module';
 import { GraphQLModule } from './modules/graphql.module';
-import { AuthorListComponent, BookListComponent, FilterBooksComponent } from './components';
+import { AuthorDetailComponent, AuthorListComponent, BookListComponent, FilterBooksComponent } from './components';
 
 @NgModule({
   declarations: [
@@ -14,6 +14,7 @@ import { AuthorListComponent, BookListComponent, FilterBooksComponent } from './
     BookListComponent,
     AuthorListComponent,
     FilterBooksComponent,
+    AuthorDetailComponent,
   ],
   imports: [
     BrowserModule,

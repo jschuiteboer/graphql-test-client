@@ -1,7 +1,7 @@
-<ul *ngIf="authors$ | async as authors" class="list-group">
-  <li *ngFor="let author of authors" class="list-group-item">
+<div *ngIf="authors$ | async as authors" class="list-group">
 
+  <a *ngFor="let author of authors" class="list-group-item list-group-item-action" [routerLink]="author.id">
     {{author.name}}
+  </a>
 
-  </li>
-</ul>
+</div>
