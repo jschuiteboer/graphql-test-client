@@ -1,4 +1,4 @@
-/* bootstrap */
+/** bootstrap **/
 $container-max-widths: (
   sm: 540px,
   md: 720px,
@@ -8,6 +8,11 @@ $container-max-widths: (
 
 @import '~bootstrap/scss/bootstrap';
 
-/* open iconic */
+/** open iconic **/
 $icon-font-path: '~open-iconic/font/fonts/';
 @import '~open-iconic/font/css/open-iconic-bootstrap';
+
+/** site styles **/
+body {
+  padding-top: 56px; // pad content for fixed header
+}
