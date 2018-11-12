@@ -1,13 +1,21 @@
 <app-filter-books (filtered)="onFiltered($event)"></app-filter-books>
 
-<ul *ngIf="books$ | async as books" class="list-group">
-  <li *ngFor="let book of books" class="list-group-item">
+<div *ngIf="books$ | async as books">
+  <ul *ngIf="books.length; else noResults" class="list-group">
+    <li *ngFor="let book of books" class="list-group-item">
 
-    <div class="d-flex justify-content-between">
-      <h5 class="mb-1">{{book.title}}</h5>
-      <span>{{book.author.name}}</span>
-    </div>
-    <span>{{book.series}}</span>
+      <div class="d-flex justify-content-between">
+        <h5 class="mb-1">{{book.title}}</h5>
+        <span>{{book.author.name}}</span>
+      </div>
+      <span>{{book.series}}</span>
 
-  </li>
-</ul>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noResults>
+  <div class="alert alert-primary" role="alert">
+    No results
+  </div>
+</ng-template>
