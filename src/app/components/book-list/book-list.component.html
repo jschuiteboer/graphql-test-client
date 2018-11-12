@@ -1,4 +1,4 @@
-<app-filter-books></app-filter-books>
+<app-filter-books (filtered)="onFiltered($event)"></app-filter-books>
 
 <ul *ngIf="books$ | async as books" class="list-group">
   <li *ngFor="let book of books" class="list-group-item">

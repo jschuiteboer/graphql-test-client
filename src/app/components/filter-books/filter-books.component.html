@@ -1,29 +1,24 @@
-<form>
+<form (ngSubmit)="onSubmit()">
   <div class="form-group">
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search for books">
+      <input name="title" type="text" class="form-control" placeholder="Search by title" [(ngModel)]="model.title">
 
       <div class="input-group-append">
-        <button type="button" class="btn btn-outline-secondary" data-toggle="collapse" data-target="#extraFilters">Filters</button>
+        <button type="button" class="btn btn-outline-secondary" data-toggle="collapse" data-target="#moreFilters">Filters</button>
         <button type="submit" class="btn btn-outline-primary">Search</button>
       </div>
     </div>
   </div>
 
-  <div class="collapse" id="extraFilters">
-    <div class="form-group">
-      <label>Title</label>
-      <input type="text" class="form-control">
-    </div>
-
+  <div class="collapse" id="moreFilters">
     <div class="form-group">
       <label>Author</label>
-      <input type="text" class="form-control">
+      <input name="author" type="text" class="form-control" [(ngModel)]="model.authorName">
     </div>
 
     <div class="form-group">
       <label>Series</label>
-      <input type="text" class="form-control">
+      <input name="series" type="text" class="form-control" [(ngModel)]="model.series">
     </div>
   </div>
 </form>

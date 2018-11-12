@@ -1,13 +1,12 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './modules/app-routing.module';
-import { BookListComponent } from './components';
 import { GraphQLModule } from './modules/graphql.module';
-import { AuthorListComponent } from './components/author-list/author-list.component';
-import { FilterBooksComponent } from './components/filter-books/filter-books.component';
+import { AuthorListComponent, BookListComponent, FilterBooksComponent } from './components';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,8 @@ import { FilterBooksComponent } from './components/filter-books/filter-books.com
     BrowserModule,
     AppRoutingModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
