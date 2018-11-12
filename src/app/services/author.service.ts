@@ -6,6 +6,13 @@ import { map } from "rxjs/operators";
 
 import { Author } from "../../models/Author";
 
+const AUTHORS_QUERY = gql`query listAuthors {
+  authors {
+    id
+    name
+  }
+}`;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,19 +22,10 @@ export class AuthorService {
   ) { }
 
   public getAuthors(): Observable<Author[]> {
-    let query = gql`query listAuthors {
-      authors {
-        id
-        name
-      }
-    }`;
-
     return this.apollo.watchQuery({
-      query: query,
-      // variables: {
-      //   filter: bookFilter,
-      // }
+      query: AUTHORS_QUERY,
     })
-    .valueChanges.pipe(map((response) => response.data.authors));
+    .valueChanges
+      .pipe(map(response => response.data.authors));
   }
 }

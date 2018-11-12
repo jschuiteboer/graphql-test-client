@@ -1,13 +1,13 @@
 export interface BookFilter {
-  title: string;
+  title?: string;
 
-  authorId: string;
+  authorId?: string;
 
-  authorName: string;
+  authorName?: string;
 
-  series: string;
+  series?: string;
 
-  sortProperty: string;
+  sortProperty?: string;
 
-  sortDirection: string;
+  sortDirection?: string;
 }
