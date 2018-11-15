@@ -1,0 +1,16 @@
+<div *ngIf="author$ | async as author">
+  <h2>Books by {{author.name}}</h2>
+
+  <ul class="list-group">
+    <li *ngFor="let book of author.books" class="list-group-item">
+
+      <div class="d-flex justify-content-between">
+        <h5 class="mb-1">{{book.title}}</h5>
+      </div>
+      <span>{{book.series}}</span>
+
+    </li>
+  </ul>
+
+  <span>{{author.books.length}} result{{author.books.length == 1?'':'s'}}</span>
+</div>

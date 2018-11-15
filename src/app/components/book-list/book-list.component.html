@@ -1,0 +1,18 @@
+<app-filter-books (filtered)="onFiltered($event)"></app-filter-books>
+
+<div *ngIf="books$ | async as books">
+
+  <ul *ngIf="books.length" class="list-group mb-3">
+    <li *ngFor="let book of books" class="list-group-item">
+
+      <div class="d-flex justify-content-between">
+        <h5 class="mb-1">{{book.title}}</h5>
+        <a [routerLink]="['/author', book.author.id]">{{book.author.name}}</a>
+      </div>
+      <span>{{book.series}}</span>
+
+    </li>
+  </ul>
+
+  <span>{{books.length}} result{{books.length == 1?'':'s'}}</span>
+</div>

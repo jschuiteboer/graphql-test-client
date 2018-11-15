@@ -1,0 +1,7 @@
+<div *ngIf="authors$ | async as authors" class="list-group">
+
+  <a *ngFor="let author of authors" class="list-group-item list-group-item-action" [routerLink]="author.id">
+    {{author.name}}
+  </a>
+
+</div>

@@ -1,0 +1,26 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <div class="input-group">
+      <input name="title" type="text" class="form-control" [(ngModel)]="model.title" title="Filter by title" placeholder="Filter by title">
+
+      <div class="input-group-append">
+        <button type="button" class="btn btn-outline-secondary" (click)="toggleFilters()" title="Show more filters">
+          <span class="oi" [ngClass]="showFilters ? 'oi-chevron-top' : 'oi-chevron-bottom'"></span>
+        </button>
+        <button type="submit" class="btn btn-outline-primary">
+          <span class="oi oi-magnifying-glass"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapse" [class.show]="showFilters" id="moreFilters">
+    <div class="form-group">
+      <input name="author" type="text" class="form-control" [(ngModel)]="model.authorName" title="Author" placeholder="Author">
+    </div>
+
+    <div class="form-group">
+      <input name="series" type="text" class="form-control" [(ngModel)]="model.series" title="Series" placeholder="Series">
+    </div>
+  </div>
+</form>
